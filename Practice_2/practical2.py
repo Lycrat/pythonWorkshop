@@ -16,11 +16,11 @@ better_cohort = [name + emoji for name in cohort_1 if len(name) % 2 != 0 ]
 print(better_cohort)
 
 # String slicing
-
 name = "Saranya"
 extract = name[3:]
-print(extract)
-
 new_name = "P" + extract
 print(new_name)
 
+#String method
+print(name.find('a'))
+print(name.replace('Sar', 'P'))
