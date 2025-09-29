@@ -1,5 +1,9 @@
 import pymysql
+import matplotlib
 
+
+
+# Connect with the world database
 conn = pymysql.connect(
     host='127.0.0.1',
     user='root',
@@ -10,7 +14,7 @@ conn = pymysql.connect(
 try:
     with conn.cursor() as cursor:
         # Read data from database
-        sql = "SELECT * FROM country LIMIT 10"
+        sql = "SELECT Name, Population FROM country ORDER BY population DESC LIMIT 10"
         cursor.execute(sql)
 
         # Fetch all rows
@@ -21,3 +25,6 @@ try:
             print(row)
 finally:
     conn.close()
+
+
+# Bar graph of the populations in the top 10 countries
