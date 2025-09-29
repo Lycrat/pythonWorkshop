@@ -25,6 +25,7 @@ try:
         names = [row['Name'] for row in rows]
         population = [row['Population'] for row in rows]
 
+        # Bar graph of the populations in the top 10 countries
         plt.xlabel("Country")
         plt.ylabel("Population")
         plt.bar(names,population)
@@ -34,6 +35,3 @@ try:
         
 finally:
     conn.close()
-
-
-# Bar graph of the populations in the top 10 countries
