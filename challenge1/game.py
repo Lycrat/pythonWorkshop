@@ -1,4 +1,5 @@
 import random
+import getpass
 OPTIONS = ["rock", "paper", "scissor"]
 
 
@@ -31,6 +32,8 @@ if (mode==1):
 elif (mode==2):
     print("Welcome to a 2 player game")
     while True:
+        # Use getpass function to conceal player 1 choice
+        #player1_choice = getpass.getpass(prompt='Player 1 enter your choice (Rock, Paper, Scissor): ').lower()
         player1_choice = input("Player 1 enter your choice (Rock, Paper, Scissor): ").lower()
         if player1_choice in OPTIONS:
             break
