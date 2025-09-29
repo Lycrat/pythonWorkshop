@@ -1,4 +1,4 @@
-
+from details import greet
 
 # List Comprehension
 
@@ -24,3 +24,6 @@ print(new_name)
 #String method
 print(name.find('a'))
 print(name.replace('Sar', 'P'))
+
+print(greet('Saranya', 8))
+print(greet('Saranya'))
