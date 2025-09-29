@@ -1,6 +1,5 @@
 import pymysql
-import matplotlib
-
+import matplotlib.pyplot as plt
 
 
 # Connect with the world database
@@ -19,10 +18,16 @@ try:
 
         # Fetch all rows
         rows = cursor.fetchall()
+        names = [row['Name'] for row in rows]
+        population = [row['Population'] for row in rows]
 
-        # Print results
-        for row in rows:
-            print(row)
+        plt.xlabel("Country")
+        plt.ylabel("Population")
+        plt.bar(names,population)
+        plt.show()
+
+
+        
 finally:
     conn.close()
 
