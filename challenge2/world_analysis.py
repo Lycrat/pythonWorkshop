@@ -2,11 +2,15 @@ import pymysql
 import matplotlib.pyplot as plt
 
 
+HOST_NAME = '127.0.0.1'
+USER = 'root'
+DB_NAME = 'world'
+
 # Connect with the world database
 conn = pymysql.connect(
-    host='127.0.0.1',
-    user='root',
-    db='world',
+    host = HOST_NAME,
+    user = USER,
+    db = DB_NAME,
     cursorclass=pymysql.cursors.DictCursor
 )
 

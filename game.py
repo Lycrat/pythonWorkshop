@@ -14,7 +14,7 @@ elif (option==2):
 
     if (player1_choice == "rock") :
         if (player2_choice == 'rock'):
-            print("Draw, replay the game") 
+            print("Draw, replay the game")
         elif (player2_choice == 'paper') :
             print("Player 2 wins")
         elif (player2_choice == 'scissor') :
@@ -33,6 +33,7 @@ elif (option==2):
             print("Player 1 wins")
         elif (player2_choice == 'scissor') :
             print("Draw, replay the game")
+
 else:
 
     
