@@ -12,20 +12,25 @@ class Game:
 
     def game_mode_1(self):
         print("Computer vs you")
-        self.player2.set_choice(random.choice(OPTIONS))
+        ch = random.choice(OPTIONS)
+        self.player2.set_choice(ch)
+        print(self.player2.get_choice())
         while True:
-            self.player1.set_choice(input("Enter your choice (Rock, Paper, Scissor): ").lower())
+            ch = input("Enter your choice (Rock, Paper, Scissor): ").lower()
+            self.player1.set_choice(ch)
             if self.player1.get_choice() in OPTIONS:
                 break
 
     def game_mode_2(self):
         print("Welcome to a 2 player game")
         while True:
-            self.player1.set_choice(input("Player 1 enter your choice (Rock, Paper, Scissor): ").lower())
+            ch = input("Player 1 enter your choice (Rock, Paper, Scissor): ").lower()
+            self.player1.set_choice(ch)
             if self.player1.get_choice() in OPTIONS:
                 break
         while True:
-            self.player2.set_choice( input("Player 2 enter your choice (Rock, Paper, Scissor): ").lower())
+            ch = input("Player 2 enter your choice (Rock, Paper, Scissor): ").lower()
+            self.player2.set_choice(ch)
             if self.player2.get_choice() in OPTIONS:
                 break
 
@@ -37,9 +42,8 @@ class Game:
             self.game_mode_1()
         else:
             self.game_mode_2()
-
-        print(player1_choice, player2_choice)
-        if (self.player1.get_choice(), self.player2.get_choice()):
+        print(self.player1.get_choice(), self.player2.get_choice())
+        if (self.player1.get_choice() == self.player2.get_choice()):
             print("Draw! 🙂‍↔️")
         elif (player1_choice == 'rock' and player2_choice == 'scissor') or (
                 player1_choice == 'paper' and player2_choice == 'rock') or (
