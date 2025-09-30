@@ -1,20 +1,19 @@
 import random
-import PersonClass
+from PersonClass import Person
 
 OPTIONS = ["rock", "paper", "scissor"]
 
 class Game:
 
     def __init__(self, mode):
-        self.player1 = PersonClass.Person('')
-        self.player2 = PersonClass.Person('')
+        self.player1 = Person('')
+        self.player2 = Person('')
         self.mode = mode
 
     def game_mode_1(self):
         print("Computer vs you")
         ch = random.choice(OPTIONS)
         self.player2.set_choice(ch)
-        print(self.player2.get_choice())
         while True:
             ch = input("Enter your choice (Rock, Paper, Scissor): ").lower()
             self.player1.set_choice(ch)
@@ -35,15 +34,14 @@ class Game:
                 break
 
     def game_logic(self):
-        player1_choice = self.player1.get_choice()
-        player2_choice = self.player2.get_choice()
-
         if self.mode == 1:
             self.game_mode_1()
         else:
             self.game_mode_2()
+        player1_choice = self.player1.get_choice()
+        player2_choice = self.player2.get_choice()
         print(self.player1.get_choice(), self.player2.get_choice())
-        if (self.player1.get_choice() == self.player2.get_choice()):
+        if (player1_choice == player2_choice):
             print("Draw! 🙂‍↔️")
         elif (player1_choice == 'rock' and player2_choice == 'scissor') or (
                 player1_choice == 'paper' and player2_choice == 'rock') or (
