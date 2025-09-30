@@ -10,16 +10,15 @@ while True:
         mode = int(mode)
         break
 
+game = None
 if (mode==1):
     game = Game(1)
-    game.game_logic()
 elif (mode==2):
     game = Game(2)
-    game.game_logic()
 else:
     print('There are only 2 modes, pick 1 or 2')
 
-
+game.game_logic()
 
 
 
